@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MoBS Group — Research</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--page-bg:#b2d8f0;--card-bg:#fff;--topbar:#0f1720;--accent:#d93a3a;--muted:#475569;--max-w:1200px}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:linear-gradient(180deg,var(--page-bg),#f7fbff 60%);color:#071019}
+    header.topbar{background:var(--topbar);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;position:sticky;top:0;z-index:50;gap:12px;}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;   /* ensures the image stays inside the box */
+    }
+
+    .brand .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* or "cover" */
+    }
+    nav.main-nav{display:flex;gap:18px;align-items:center}
+    nav.main-nav a{color:#dbeafe;text-decoration:none;padding:8px 10px;border-radius:6px;font-weight:600}
+    nav.main-nav a.active{box-shadow:inset 0 -3px 0 0 var(--accent)}
+
+    main.container{max-width:var(--max-w);margin:28px auto;padding:0 18px}
+    h1{margin:0;font-size:26px;color:var(--accent)}
+    .lead{color:var(--muted);margin-top:6px}
+
+    .themes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .theme{background:var(--card-bg);padding:14px;border-radius:10px;border:1px solid rgba(10,20,30,0.04)}
+    .theme h3{margin:0 0 6px}
+    .theme p{color:var(--muted);font-size:14px}
+
+    .methods{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .pill{background:#fff;padding:8px 12px;border-radius:999px;border:1px solid rgba(10,20,30,0.04);font-weight:600}
+
+    /*.projects{margin-top:20px;display:grid;grid-template-columns:1fr 320px;gap:18px}*/
+    .projects {display: grid; grid-template-columns: 1fr 0px;gap: 18px;}
+
+    .sidebar{background:var(--card-bg);padding:14px;border-radius:10px;border:1px solid rgba(10,20,30,0.04)}
+
+    @media (max-width:960px){.themes{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}}
+    @media (max-width:600px){.themes{grid-template-columns:1fr}}
+
+    .project-list {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+    
+
+    .project {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      background: var(--card-bg);
+      padding: 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(10,20,30,0.06);
+    }
+
+    .project video,
+    .project img {
+      width: 325px;
+      height: 200px;
+      object-fit: contain;
+      flex-shrink: 0;
+      border-radius: 8px;
+      border: 1px solid rgba(10,20,30,0.05);
+    }
+
+    .project h4 {
+      margin: 0 0 6px 0;
+      font-size: 20px;
+      color: var(--accent);
+    }
+
+    .project p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.55;
+    }
+
+    /* mobile layout */
+    @media (max-width: 700px) {
+      .project {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .project video,
+      .project img {
+        width: 100%;
+        height: 200px;
+      }
+    }
+
+    /* For tools and resources*/
+    .tools-section {
+      margin-top: 32px;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      background: var(--card-bg);
+      padding: 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(10,20,30,0.04);
+    }
+
+    .tool-block p {
+      margin: 0 0 6px;
+      font-size: 17px;
+      color: #000;
+    }
+
+    .tool-block ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .tools-grid {
+        grid-template-columns: 1fr 1fr; /* two columns */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .tools-grid {
+        grid-template-columns: 1fr; /* one column */
+      }
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <header class="topbar" role="banner">
+    <div class="brand">
+      <div class="logo">
+    <img src="imgs/breath_vortex.png" alt="MoBS logo">
+      </div>
+    <div><div style="font-weight:700">MoBS Group</div><div style="font-size:12px;color:rgba(255,255,255,0.7)">IISER Mohali</div></div></div>
+    <nav class="main-nav" role="navigation" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="people.html">People</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="publications.html">Publications</a>
+      <a href="opportunities.html">Opportunities</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <header>
+      <h1>Research</h1>
+      <p class="lead">Overview of active research themes, computational methods and selected projects.</p>
+    </header>
+
+    <section class="themes" aria-label="Research themes">
+      <div class="theme">
+        <h3>Active Matter & Collective Behaviour</h3>
+        <p style="text-align: justify;">Active Brownian particles, collecive behavior and emergent dynamical states.</p>
+      </div>
+      <div class="theme">
+      <h3>Soft & Polymer Physics</h3>
+      <p style="text-align: justify;">
+        Polymer physics and soft matter systems, with a focus on self-assembly, confinement,
+        viscoelastic response, and collective phenomena in complex fluids.
+      </p>
+      </div>
+      <div class="theme">
+        <h3>Biophysics</h3>
+        <p style="text-align: justify;">Cell mechanics and cell migration, Physics of Plasmodium biology, cell deformation in constrictions, membrane dynamics and transport.</p>
+      </div>
+    </section>
+
+    <div class="methods" aria-hidden="false">
+      <div class="pill">Molecular dynamics</div>
+      <div class="pill">Brownian/Langevin dynamics</div>
+      <div class="pill">Dissipative Particle Dynamics</div>
+      <div class="pill">Multiparticle Collision Dynamics</div>
+      <div class="pill">Continuum modelling</div>
+      <div class="pill">Data analysis & visualization</div>
+      <div class="pill">GPU acceleration (CUDA)</div>
+    </div>
+
+    <div class="projects">
+
+      <!-- LEFT: Selected Projects (full-width parent column) -->
+      <section class="project-list" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Selected projects</h2>
+
+        <article class="project">
+          <video muted playsinline controls>
+            <source src="videos/helical_chain_packing.mp4" type="video/mp4">
+          </video>
+          <div>
+            <h4>Packing of a helical polymer into a capsid</h4>
+            <p style="text-align: justify;">
+              Torsional elasticity strongly shapes how a semiflexible helical polymer packs into 
+              and ejects from a confined capsid. Mild torsional rigidity speeds up packing, 
+              while higher stiffness first slows and then accelerates it due to competition 
+              between spooling and increased persistence length—a feature that disappears without confinement. 
+              Torsional stiffness also promotes spool-like structures, whereas ejection slows monotonically as rigidity impedes uncoiling. 
+              Overall, torsional mechanics critically influence both packing and release in confined polymers such as viral DNA.<br>
+              <strong>References:</strong> <a href="https://doi.org/10.1063/5.0292735" target="_blank" rel="noopener noreferrer">J. Chem. Phys. (2025)</a>;
+              <a href="https://doi.org/10.1002/adts.202500420" target="_blank" rel="noopener noreferrer">Adv. Theory &amp; Simulations(2025)</a> 
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <video muted playsinline controls>
+            <source src="videos/H40_ImageJ.mp4" type="video/mp4">
+          </video>
+          <div>
+            <h4>Blood sediments as gel</h4>
+            <p style="text-align: justify;">
+                Erythrocyte sedimentation arises from the collapse of a soft-particle gel formed by densely packed, deformable 
+                red blood cells with weak attractions. Experiments, simulations, and theory show that stronger fibrinogen-mediated 
+                interactions create a more porous, permeable cell network, leading to faster sedimentation. Together, these results 
+                support a gel-based mechanism rather than sedimentation of disjoint aggregates and link ESR directly to the 
+                microstructure of the erythrocyte network. <br>
+                <strong>References:</strong> <a href="https://doi.org/10.1103/PhysRevLett.128.088101" target="_blank" rel="noopener noreferrer">Phys. Rev. Lett. (2022)</a>;
+              <a href="https://doi.org/10.1103/PhysRevE.105.024610" target="_blank" rel="noopener noreferrer">Phys. Rev. E (2022)</a> 
+            </p>
+          </div>
+        </article>
+
+        <article class="project">
+          <video muted playsinline controls>
+            <source src="videos/elife-56500.mp4" type="video/mp4">
+          </video>
+          <div>
+            <h4>Malaria parasite alignment at RBC surface</h4>
+            <p style="text-align: justify;">
+                Malaria parasites align their apex to the red blood cell (RBC) membrane through a passive process driven by stochastic 
+                adhesion bonds and RBC deformability. Simulations show that membrane deformation helps wrap the parasite and promotes 
+                apex contact, while increased RBC rigidity drastically slows alignment. Parasite shape also matters: the native egg-like 
+                form achieves reliably fast alignment across a wide range of adhesion strengths and membrane rigidities, whereas spherical, 
+                oblate, or highly elongated shapes often align more slowly. Overall, parasite adhesion, RBC mechanics, and shape jointly 
+                govern the efficiency of apical alignment required for successful invasion.<br>
+                <strong>References:</strong> <a href="https://doi.org/10.7554/eLife.68818" target="_blank" rel="noopener noreferrer">eLife (2021)</a>;
+              <a href="https://doi.org/10.7554/eLife.56500" target="_blank" rel="noopener noreferrer">eLife (2020)</a>;
+              <a href="https://doi.org/10.1016/j.bpj.2019.08.027" target="_blank" rel="noopener noreferrer">Biophysical journal (2019)</a>
+            </p>
+          </div>
+        </article>
+
+      </section>
+
+    </div>
+
+
+    <!-- NEW: Tools & Resources moved below projects, full-width -->
+    <section class="tools-section">
+      <h2 style="margin-bottom:12px;">Tools & Resources</h2>
+
+      <div class="tools-grid">
+
+        <div class="tool-block">
+          <p><strong>Coarse-grained MD simulators</strong></p>
+          <ul>
+            <li><a class="muted" href="https://www.lammps.org/" target="_blank">LAMMPS</a></li>
+            <li><a class="muted" href="https://hoomd-blue.readthedocs.io/" target="_blank">HOOMD-blue</a></li>
+          </ul>
+        </div>
+
+        <div class="tool-block">
+          <p><strong>Analysis & visualization</strong></p>
+          <ul>
+            <li>OVITO</li>
+            <li>MDAnalysis</li>
+            <li>VMD</li>
+            <li>Paraview</li>
+            <li>Python (NumPy, SciPy, Matplotlib)</li>
+          </ul>
+        </div>
+
+        <div class="tool-block">
+          <p><strong>High-performance computing</strong></p>
+          <ul>
+            <li>MPI & OpenMP</li>
+            <li>GPU / CUDA computing</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <footer style="margin-top:28px;color:var(--muted)">© MoBS Group — IISER Mohali</footer>
+  </main>
+</body>
+</html>

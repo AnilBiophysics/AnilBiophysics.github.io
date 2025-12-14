@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MoBS Group — Opportunities</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--page-bg:#b2d8f0;--card-bg:#fff;--topbar:#0f1720;--accent:#d93a3a;--muted:#475569;--max-w:1200px}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial;
+         background:linear-gradient(180deg,var(--page-bg),#f7fbff 60%);color:#071019}
+    header.topbar{background:var(--topbar);color:#fff;display:flex;align-items:center;
+         justify-content:space-between;padding:10px 18px;position:sticky;top:0;z-index:50;gap:12px;}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;   /* ensures the image stays inside the box */
+    }
+
+    .brand .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* or "cover" */
+    }
+    nav.main-nav{display:flex;gap:18px}
+    nav.main-nav a{color:#dbeafe;text-decoration:none;padding:8px 10px;border-radius:6px;font-weight:600}
+    nav.main-nav a.active{box-shadow:inset 0 -3px 0 0 var(--accent)}
+    main.container{max-width:var(--max-w);margin:28px auto;padding:0 18px}
+
+    h1{margin:0;font-size:26px;color:var(--accent)}
+    h2{color:var(--accent);margin-top:26px;margin-bottom:6px}
+    p{font-size:18px;color:var(--muted);line-height:1.6}
+    ul{font-size:18px;color:var(--muted);line-height:1.6;padding-left:22px}
+    .card{background:var(--card-bg);padding:16px;border-radius:10px;border:1px solid rgba(10,20,30,0.06);margin-top:16px}
+
+    footer{margin-top:28px;color:var(--muted)}
+  </style>
+</head>
+
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo"><img src="imgs/breath_vortex.png" alt="MoBS logo"></div>
+    <div>
+      <div style="font-weight:700">MoBS Group</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.7)">IISER Mohali</div>
+    </div>
+  </div>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="people.html">People</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="opportunities.html" class="active">Opportunities</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <h1>Opportunities</h1>
+  <p class="lead">Our group welcomes motivated students and researchers with interest in soft matter, biophysics, and active matter.</p>
+
+
+  <!-- Postdoc -->
+  <section class="card">
+    <h2>Postdoctoral Position</h2>
+    <p>
+      <strong>Our group currently has one open postdoctoral position.</strong><br>
+      Candidates with a PhD in soft matter physics or biophysics, and strong experience in computational/theoretical modeling, are encouraged to apply.
+    </p>
+    <p>Email your CV + list of publications to <strong>adasanna@iisermohali.ac.in</strong>.</p>
+  </section>
+
+
+  <!-- PhD -->
+  <section class="card">
+    <h2>PhD Positions</h2>
+    <p>
+      We recruit PhD students through the IISER Mohali PhD admission process.
+      Candidates with strong backgrounds in physics, applied mathematics, or engineering
+      — and interest in theoretical or computational soft matter — are encouraged to apply.
+    </p>
+    <p><strong>Skills preferred:</strong> statistical physics, classical mechanics, numerical methods, C/C++, Python, Linux.</p>
+    <p>
+      <strong>How to apply:</strong><br>
+      Visit the IISER Mohali website for PhD admission notifications:
+      <a href="https://www.iisermohali.ac.in" target="_blank" rel="noopener noreferrer">IISER Mohali</a>
+    </p>
+  </section>
+
+  <!-- MS Thesis -->
+  <section class="card">
+    <h2>MS Thesis</h2>
+    <p>
+      We regularly host MS thesis students from IISER Mohali.
+      Work involves computational modeling, simulation techniques,
+      and theoretical analysis of biological and soft matter systems.
+    </p>
+    <p><strong>To join:</strong> email the PI briefly describing your background and interests.</p>
+  </section>
+
+  <footer>© MoBS Group — IISER Mohali</footer>
+</main>
+</body>
+</html>
