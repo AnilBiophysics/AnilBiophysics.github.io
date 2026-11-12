@@ -43,26 +43,30 @@
     .methods{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
     .pill{background:#fff;padding:8px 12px;border-radius:999px;border:1px solid rgba(10,20,30,0.04);font-weight:600}
 
-    /*.projects{margin-top:20px;display:grid;grid-template-columns:1fr 320px;gap:18px}*/
-    .projects {display: grid; grid-template-columns: 1fr 0px;gap: 18px;}
-
-    .sidebar{background:var(--card-bg);padding:14px;border-radius:10px;border:1px solid rgba(10,20,30,0.04)}
-
-    @media (max-width:960px){.themes{grid-template-columns:repeat(2,1fr)}.projects{grid-template-columns:1fr}}
-    @media (max-width:600px){.themes{grid-template-columns:1fr}}
+    /* Selected projects: responsive 2 x 2 card grid */
+    .projects {
+      display: block;
+      margin-top: 20px;
+    }
 
     .project-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
       margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 26px;
     }
-    
+
+    .project-list > h2 {
+      grid-column: 1 / -1;
+      margin: 0 0 2px;
+    }
 
     .project {
       display: flex;
-      gap: 18px;
-      align-items: center;
+      flex-direction: column;
+      align-items: stretch;
+      min-width: 0;
+      gap: 14px;
       background: var(--card-bg);
       padding: 16px;
       border-radius: 10px;
@@ -71,38 +75,36 @@
 
     .project video,
     .project img {
-      width: 325px;
-      height: 200px;
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
       object-fit: contain;
       flex-shrink: 0;
       border-radius: 8px;
       border: 1px solid rgba(10,20,30,0.05);
+      background: #000;
     }
 
     .project h4 {
-      margin: 0 0 6px 0;
-      font-size: 20px;
+      margin: 0 0 8px;
+      font-size: 19px;
+      line-height: 1.35;
       color: var(--accent);
     }
 
     .project p {
       margin: 0;
       color: var(--muted);
-      font-size: 17px;
+      font-size: 15px;
       line-height: 1.55;
     }
 
-    /* mobile layout */
+    /* Keep two columns on tablets; stack on narrow screens */
     @media (max-width: 700px) {
-      .project {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .project video,
-      .project img {
-        width: 100%;
-        height: 200px;
+      .project-list {
+        grid-template-columns: 1fr;
+        gap: 18px;
       }
     }
 
